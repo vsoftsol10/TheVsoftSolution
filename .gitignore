@@ -1,0 +1,23 @@
+﻿# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Archives
+*.zip
+*.rar
+*.7z
+
+# Backups
+backup*/
+*backup*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local

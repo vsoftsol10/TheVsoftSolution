@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* index.css */
+:root {
+  --font-heading: 'IBM Plex Sans', sans-serif !important;
+  --font-body: 'Open Sans', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+.heading {
+  font-family: var(--font-heading) !important;
+}
+
+body,
+p,
+span,
+.text {
+  font-family: var(--font-body) !important;
+  font-display: swap;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}

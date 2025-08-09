@@ -1,0 +1,43 @@
+.scroll-float {
+  overflow: hidden;
+}
+
+.scroll-float-text {
+  display: inline-block;
+  font-size: 2.5rem; /* Base size for medium screens */
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Mobile (portrait) - up to 480px */
+@media (max-width: 480px) {
+  .scroll-float-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablets - 481px to 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .scroll-float-text {
+    font-size: 2rem;
+  }
+}
+
+/* Small laptops - 769px to 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .scroll-float-text {
+    font-size: 2.3rem;
+  }
+}
+
+/* Large screens - 1025px and above */
+@media (min-width: 1025px) {
+  .scroll-float-text {
+    font-size: 3rem;
+  }
+}
+
+.char {
+  display: inline-block;
+}
