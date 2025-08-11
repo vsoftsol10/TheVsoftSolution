@@ -1,10 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { Box, Container, Typography, useTheme, useMediaQuery } from '@mui/material';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import AnimatedContent from '../Animations/AnimatedContent';
-
+import React, { useState, useEffect } from 'react';
+import { Box, Container, Typography, IconButton } from '@mui/material';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 // Import all client logos
 import ClientOne from '../assets/client/BULLET CRACKERS LOGO 001.webp';
 import ClientTwo from '../assets/client/MKM LOGO 001.webp';
@@ -17,435 +13,289 @@ import ClientEight from '../assets/client/GAYRA LOGO 001.webp';
 import ClientNine from '../assets/client/Nivedha LOGO 002.webp';
 import ClientTen from '../assets/client/thanporunai-logo.webp'; 
 import ClientEleven from '../assets/client/4Tlogo.webp';
-import ClientTwelve from '../assets/client/Friends Logo.webp'; 
-
+import ClientTwelve from '../assets/client/Friends Logo.webp';
 const ClientLogoSlider = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const isLaptop = useMediaQuery(theme.breakpoints.between('md', 'lg'));
-  const sliderRef = useRef(null);
-  const [isSliderReady, setIsSliderReady] = useState(false);
-  
-  const vsoftPurple = '#803082';
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Client logos array with fallback handling
-  const clientLogos = [
-    { id: 1, logo: ClientOne, name: "Bullet Crackers", alt: "Bullet Crackers Logo" },
-    { id: 2, logo: ClientTwo, name: "MKM", alt: "MKM Company Logo" },
-    { id: 3, logo: ClientThree, name: "SMEC", alt: "SMEC Logo" },
-    { id: 4, logo: ClientFour, name: "DARC", alt: "DARC Logo" },
-    { id: 5, logo: ClientFive, name: "CNI", alt: "CNI Logo" },
-    { id: 6, logo: ClientSix, name: "Rajalakshmi", alt: "Rajalakshmi Logo" },
-    { id: 7, logo: ClientSeven, name: "Maharaja", alt: "Maharaja Logo" },
-    { id: 8, logo: ClientEight, name: "Gayra", alt: "Gayra Logo" },
-    { id: 9, logo: ClientNine, name: "Nivedha", alt: "Nivedha Logo" },
-    { id: 10, logo: ClientTen, name: "Thanporunai", alt: "Thanporunai Logo" },
-    { id: 11, logo: ClientEleven, name: "4T", alt: "4T Logo" },
-    { id: 12, logo: ClientTwelve, name: "Friends Aqua", alt: "Friends Aqua Logo" },
+  // Sample client data - replace with your actual logos
+  const clients = [
+    { id: 1, name: "Bullet Crackers", logo: ClientOne },
+    { id: 2, name: "MKM", logo: ClientTwo },
+    { id: 3, name: "SMEC", logo: ClientThree },
+    { id: 4, name: "DARC", logo: ClientFour },
+    { id: 5, name: "CNI", logo: ClientFive },
+    { id: 6, name: "Rajalakshmi", logo: ClientSix },
+    { id: 7, name: "Maharaja", logo: ClientSeven },
+    { id: 8, name: "Gayra", logo: ClientEight },
+    { id: 9, name: "Nivedha", logo: ClientNine },
+    { id: 10, name: "Thanporunai", logo: ClientTen },
+    { id: 11, name: "4T", logo: ClientEleven },
+    { id: 12, name: "Friends", logo: ClientTwelve },
   ];
 
-  // Calculate slides to show based on screen size and number of logos
   const getSlidesToShow = () => {
-    const logoCount = clientLogos.length;
-    
-    if (isMobile) {
-      return Math.min(2, logoCount);
-    } else if (isTablet) {
-      return Math.min(3, logoCount);
-    } else if (isLaptop) {
-      return Math.min(4, logoCount);
-    } else {
-      return Math.min(5, logoCount);
-    }
+    if (typeof window === 'undefined') return 5;
+    if (window.innerWidth < 600) return 2;
+    if (window.innerWidth < 960) return 3;
+    if (window.innerWidth < 1280) return 4;
+    return 5;
   };
 
-  // Enhanced slider settings with better responsiveness
-  const settings = {
-    dots: isMobile ? false : true, // Hide dots on mobile for cleaner look
-    infinite: clientLogos.length > 2,
-    speed: 700,
-    slidesToShow: getSlidesToShow(),
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    arrows: false, // Disable arrows for cleaner mobile experience
-    swipeToSlide: true,
-    touchThreshold: 10,
-    lazyLoad: 'ondemand',
-    accessibility: true,
-    focusOnSelect: false,
-    centerMode: false,
-    variableWidth: false,
-    responsive: [
-      {
-        breakpoint: 1400,
-        settings: {
-          slidesToShow: Math.min(5, clientLogos.length),
-          slidesToScroll: 1,
-          dots: true,
-          arrows: true,
-        }
-      },
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: Math.min(4, clientLogos.length),
-          slidesToScroll: 1,
-          dots: true,
-          arrows: true,
-        }
-      },
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: Math.min(3, clientLogos.length),
-          slidesToScroll: 1,
-          dots: true,
-          arrows: false,
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: false,
-        }
-      },
-      {
-        breakpoint: 400,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: false,
-          dots: false,
-          centerPadding: '20px',
-        }
-      }
-    ]
-  };
+  const [visibleSlides, setVisibleSlides] = useState(getSlidesToShow());
 
-  // Handle slider initialization
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsSliderReady(true);
-    }, 100);
+    const handleResize = () => {
+      setVisibleSlides(getSlidesToShow());
+    };
 
-    return () => clearTimeout(timer);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Error boundary for individual logo items
-  const LogoItem = ({ client, index }) => {
-    const [imageError, setImageError] = useState(false);
-    const [imageLoaded, setImageLoaded] = useState(false);
+  // Auto-slide functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => 
+        prev >= clients.length - visibleSlides ? 0 : prev + 1
+      );
+    }, 3000);
 
-    const handleImageError = () => {
-      console.warn(`Failed to load image for ${client.name}`);
-      setImageError(true);
-    };
+    return () => clearInterval(interval);
+  }, [clients.length, visibleSlides]);
 
-    const handleImageLoad = () => {
-      setImageLoaded(true);
-    };
+  const nextSlide = () => {
+    setCurrentSlide((prev) => 
+      prev >= clients.length - visibleSlides ? 0 : prev + 1
+    );
+  };
 
-    return (
-      <Box
-        key={client.id}
-        sx={{
-          px: { xs: 0.5, sm: 1, md: 1.5 },
-          display: 'flex !important',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: { xs: '120px', sm: '140px', md: '160px' },
-          outline: 'none', // Remove focus outline
-        }}
-      >
-        <Box
-          sx={{
-            height: { xs: '80px', sm: '90px', md: '100px' },
-            width: { xs: '80px', sm: '90px', md: '100px' },
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'white',
-            borderRadius: { xs: '8px', md: '12px' },
-            padding: { xs: '8px', sm: '10px', md: '12px' },
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-            transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-            cursor: 'pointer',
-            border: '1px solid rgba(0,0,0,0.05)',
-            position: 'relative',
-            overflow: 'hidden',
-            '&:hover': {
-              transform: 'translateY(-4px)',
-              boxShadow: '0 8px 25px rgba(0,0,0,0.12)',
-              borderColor: 'rgba(128, 48, 130, 0.2)',
-            },
-            '&::before': {
-              content: '""',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background: `linear-gradient(45deg, transparent 0%, rgba(128, 48, 130, 0.05) 50%, transparent 100%)`,
-              opacity: 0,
-              transition: 'opacity 0.3s ease',
-            },
-            '&:hover::before': {
-              opacity: 1,
-            },
-          }}
-        >
-          {!imageError ? (
-            <Box
-              component="img"
-              src={client.logo}
-              alt={client.alt || `${client.name} logo`}
-              loading="lazy"
-              onError={handleImageError}
-              onLoad={handleImageLoad}
-              sx={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-                transition: 'opacity 0.3s ease',
-                opacity: imageLoaded ? 1 : 0.7,
-              }}
-            />
-          ) : (
-            // Fallback content when image fails to load
-            <Box
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                height: '100%',
-                backgroundColor: 'rgba(128, 48, 130, 0.1)',
-                borderRadius: '4px',
-                color: vsoftPurple,
-                fontWeight: 600,
-                fontSize: { xs: '0.7rem', sm: '0.8rem' },
-                textAlign: 'center',
-                padding: '4px',
-              }}
-            >
-              {client.name}
-            </Box>
-          )}
-        </Box>
-      </Box>
+  const prevSlide = () => {
+    setCurrentSlide((prev) => 
+      prev <= 0 ? clients.length - visibleSlides : prev - 1
     );
   };
 
   return (
     <Box
       sx={{
-        py: { xs: 4, sm: 6, md: 8, lg: 10 },
-        backgroundColor: '#f8f9fa',
-        borderTop: '1px solid rgba(0, 0, 0, 0.05)',
-        borderBottom: '1px solid rgba(0, 0, 0, 0.05)',
-        overflow: 'hidden',
+        py: { xs: 8, sm: 10, md: 12 },
         position: 'relative',
+        overflow: 'hidden',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'radial-gradient(ellipse at top, rgba(128, 48, 130, 0.1) 0%, transparent 70%)',
+          pointerEvents: 'none'
+        }
       }}
     >
       <Container maxWidth="xl">
-        {/* Header Section */}
-        <Box
-          sx={{
-            mb: { xs: 3, sm: 4, md: 6 },
-            textAlign: 'center',
-            position: 'relative',
-          }}
-        >
-          {/* Decorative line */}
-          <Box
-            sx={{
-              position: 'absolute',
-              width: { xs: '40px', md: '60px' },
-              height: { xs: '3px', md: '4px' },
-              background: `linear-gradient(90deg, ${vsoftPurple} 0%, rgba(128, 48, 130, 0.3) 100%)`,
-              left: '50%',
-              transform: 'translateX(-50%)',
-              bottom: { xs: -15, md: -25 },
-              borderRadius: '4px',
-            }}
-          />
-
-          {/* Subtitle */}
+        {/* Header */}
+        <Box sx={{ textAlign: 'center', mb: 8, position: 'relative', zIndex: 1 }}>
           <Typography
-            variant="subtitle1"
+            variant="overline"
             sx={{
-              fontWeight: 600,
-              color: vsoftPurple,
-              textTransform: 'uppercase',
-              letterSpacing: { xs: '1px', md: '1.5px' },
-              mb: { xs: 0.5, md: 1 },
-              fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem' },
+              color: '#803082',
+              fontWeight: 700,
+              letterSpacing: '2px',
+              fontSize: '0.9rem',
+              display: 'block',
+              mb: 1
             }}
           >
-            {AnimatedContent ? (
-              <AnimatedContent
-                distance={20}
-                direction="vertical"
-                config={{ tension: 120, friction: 14 }}
-                initialOpacity={0}
-                animateOpacity
-                scale={1}
-                threshold={0.1}
-              >
-                Trusted Partnerships
-              </AnimatedContent>
-            ) : (
-              'Trusted Partnerships'
-            )}
+            Trusted Partners
           </Typography>
-
-          {/* Main Header */}
+          
           <Typography
             variant="h2"
             component="h2"
             sx={{
-              fontWeight: 700,
+              fontWeight: 800,
               color: 'text.primary',
-              fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
-              mb: { xs: 1, md: 2 },
-              position: 'relative',
-              display: 'inline-block',
-              lineHeight: 1.2,
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+              mb: 2,
+              background: 'linear-gradient(45deg, #2c3e50, #803082)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
             }}
           >
-            {AnimatedContent ? (
-              <AnimatedContent
-                distance={40}
-                direction="vertical"
-                config={{ tension: 100, friction: 10 }}
-                initialOpacity={0}
-                animateOpacity
-                scale={1}
-                threshold={0.1}
-              >
-                Our Successful Clients
-              </AnimatedContent>
-            ) : (
-              'Our Successful Clients'
-            )}
+            Our Successful Clients
           </Typography>
-
-          {/* Description */}
+          
+          <Box
+            sx={{
+              width: 80,
+              height: 4,
+              background: 'linear-gradient(90deg, #803082, #a855f7)',
+              mx: 'auto',
+              borderRadius: 2,
+              mb: 3
+            }}
+          />
+          
           <Typography
             variant="body1"
             sx={{
               color: 'text.secondary',
-              maxWidth: { xs: '90%', sm: '80%', md: '650px' },
+              fontSize: { xs: '1rem', md: '1.1rem' },
+              maxWidth: 600,
               mx: 'auto',
-              fontSize: { xs: '0.9rem', sm: '1rem', md: '1.1rem' },
-              lineHeight: 1.5,
+              lineHeight: 1.6
             }}
           >
-            {AnimatedContent ? (
-              <AnimatedContent
-                distance={30}
-                direction="vertical"
-                delay={100}
-                config={{ tension: 100, friction: 14 }}
-                initialOpacity={0}
-                animateOpacity
-                threshold={0.1}
-              >
-                Proudly partnering with industry leaders who trust our expertise for their digital success
-              </AnimatedContent>
-            ) : (
-              'Proudly partnering with industry leaders who trust our expertise for their digital success'
-            )}
+            Partnering with industry leaders who trust our expertise for their digital transformation journey
           </Typography>
         </Box>
 
-        {/* Client Logo Slider */}
-        <Box
-          sx={{
-            px: { xs: 0, sm: 2, md: 4 },
-            mt: { xs: 2, sm: 4, md: 5 },
-            position: 'relative',
-            // Enhanced slider styling
-            '& .slick-track': {
-              display: 'flex',
-              alignItems: 'center',
-            },
-            '& .slick-slide': {
-              padding: { xs: '0 8px', sm: '0 6px', md: '0 4px' },
-              '& > div': {
-                height: '100%',
-              },
-            },
-            '& .slick-list': {
-              overflow: 'hidden',
-              margin: { xs: '0 -8px', sm: '0 -6px', md: '0 -4px' },
-            },
-            '& .slick-dots': {
-              bottom: { xs: '-30px', md: '-45px' },
-              display: { xs: 'none !important', sm: 'block !important' },
-              '& li': {
-                margin: '0 4px',
-              },
-              '& li button:before': {
-                color: vsoftPurple,
-                fontSize: { xs: '10px', md: '12px' },
-                opacity: 0.6,
-              },
-              '& li.slick-active button:before': {
-                color: vsoftPurple,
-                opacity: 1,
-              },
-            },
-            '& .slick-arrow': {
-              display: { xs: 'none !important', md: 'block !important' },
+        {/* Slider Container */}
+        <Box sx={{ position: 'relative', px: { xs: 0, sm: 2 } }}>
+          {/* Navigation Buttons - Hidden on mobile */}
+          <IconButton
+            onClick={prevSlide}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              position: 'absolute',
+              left: -20,
+              top: '50%',
+              transform: 'translateY(-50%)',
               zIndex: 2,
-              width: '40px',
-              height: '40px',
-              '&:before': {
-                color: vsoftPurple,
-                fontSize: '24px',
-              },
+              bgcolor: 'rgba(255,255,255,0.9)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)',
               '&:hover': {
-                '&:before': {
-                  opacity: 1,
-                },
+                bgcolor: 'white',
+                transform: 'translateY(-50%) scale(1.1)',
               },
-            },
-            '& .slick-prev': {
-              left: '-45px',
-            },
-            '& .slick-next': {
-              right: '-45px',
-            },
-          }}
-        >
-          {isSliderReady && clientLogos.length > 0 ? (
-            <Slider ref={sliderRef} {...settings}>
-              {clientLogos.map((client, index) => (
-                <LogoItem key={client.id} client={client} index={index} />
-              ))}
-            </Slider>
-          ) : (
-            // Loading state or fallback
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+          >
+            <ChevronLeft size={24} color="#803082" />
+          </IconButton>
+          
+          <IconButton
+            onClick={nextSlide}
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              position: 'absolute',
+              right: -20,
+              top: '50%',
+              transform: 'translateY(-50%)',
+              zIndex: 2,
+              bgcolor: 'rgba(255,255,255,0.9)',
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)',
+              '&:hover': {
+                bgcolor: 'white',
+                transform: 'translateY(-50%) scale(1.1)',
+              },
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+            }}
+          >
+            <ChevronRight size={24} color="#803082" />
+          </IconButton>
+
+          {/* Slider Track */}
+          <Box sx={{ overflow: 'hidden', px: { xs: 3, sm: 6 } }}>
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minHeight: '160px',
-                color: 'text.secondary',
+                transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+                transform: `translateX(-${(currentSlide * 100) / visibleSlides}%)`
               }}
             >
-              <Typography variant="body2">Loading client logos...</Typography>
+              {clients.map((client) => (
+                <Box
+                  key={client.id}
+                  sx={{
+                    flexShrink: 0,
+                    width: `${100 / visibleSlides}%`,
+                    px: { xs: 1, sm: 1.5, md: 2 }
+                  }}
+                >
+                  <Box
+                    sx={{
+                      borderRadius: 3,
+                      p: { xs: 2, sm: 3, md: 2 },
+                      height: 120,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      backdropFilter: 'blur(10px)',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                      '&:hover': {
+                        transform: 'translateY(-8px) scale(1.02)',
+                        boxShadow: '0 20px 40px rgba(128, 48, 130, 0.15)',
+                        '&::before': {
+                          opacity: 1
+                        },
+                        '& img': {
+                          filter: 'grayscale(0%) brightness(1.1)',
+                          transform: 'scale(1.05)'
+                        }
+                      },
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        background: 'linear-gradient(135deg, rgba(128, 48, 130, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%)',
+                        opacity: 0,
+                        transition: 'opacity 0.4s ease'
+                      }
+                    }}
+                  >
+                    <Box
+                      component="img"
+                      src={client.logo}
+                      alt={`${client.name} logo`}
+                      sx={{
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
+                        filter: 'grayscale(20%) brightness(0.9)',
+                        transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                        position: 'relative',
+                        zIndex: 1
+                      }}
+                    />
+                  </Box>
+                </Box>
+              ))}
             </Box>
-          )}
+          </Box>
+
+          {/* Dots Indicator */}
+          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6, gap: 1 }}>
+            {Array.from({ length: Math.max(0, clients.length - visibleSlides + 1) }).map((_, index) => (
+              <Box
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                sx={{
+                  width: currentSlide === index ? 32 : 12,
+                  height: 12,
+                  borderRadius: 6,
+                  bgcolor: currentSlide === index ? '#803082' : 'rgba(128, 48, 130, 0.3)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '&:hover': {
+                    bgcolor: currentSlide === index ? '#803082' : 'rgba(128, 48, 130, 0.6)',
+                    transform: 'scale(1.2)'
+                  }
+                }}
+              />
+            ))}
+          </Box>
         </Box>
       </Container>
     </Box>

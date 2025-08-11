@@ -4,16 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="./src/assets/mainlogo.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<!-- Preload important font stylesheet -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-
-<!-- Fallback for non-JS/no-preload -->
-<noscript>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=Open+Sans:wght@400;600&display=swap">
-</noscript>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>VSoft Solutions – Leading IT Company in Tirunelveli</title>
@@ -27,8 +17,29 @@
   <meta property="og:description" content="We provide top-notch web development, mobile app development, and custom software services in Tirunelveli." />
   <meta property="og:url" content="https://thevsoft.com/" />
   <meta property="og:type" content="website" />
-</head>
 
+  <!-- Preconnect for Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload important font stylesheet -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=Open+Sans:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;700&family=Open+Sans:wght@400;600&display=swap">
+  </noscript>
+
+  <!-- Preload main CSS -->
+  <link rel="preload" href="/assets/index-BVPUUxyf.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/index-BVPUUxyf.css"></noscript>
+
+  <!-- Async load non-critical CSS -->
+  <link rel="preload" href="/assets/slick-carousel.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="/assets/@fontsource.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/assets/slick-carousel.css">
+    <link rel="stylesheet" href="/assets/@fontsource.css">
+  </noscript>
+</head>
 
 <body>
   <div id="root"></div>
