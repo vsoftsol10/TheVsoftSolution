@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from '../assets/vslogo_new.png';
 import StepUp from "../assets/StepUp-final.avif";
+
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -138,12 +139,15 @@ function Header() {
                 </a>
               </li>
               <li className="nav-item stepup-btn-container">
-                <a href="/stepup" onClick={closeMenu}>
-                  <img
-                    src={StepUp}
-                    alt="StepUp"
-                    className="stepup-image"
-                  />
+                <a href="/stepup" className="stepup-link" onClick={closeMenu}>
+                  <div className="stepup-content">
+                    <img
+                      src={StepUp}
+                      alt="StepUp"
+                      className="stepup-image"
+                    />
+                    <span className="stepup-text">Explore our upskilling courses</span>
+                  </div>
                 </a>
               </li>
             </ul>

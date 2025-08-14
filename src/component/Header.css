@@ -218,11 +218,30 @@
   color: #7a337a;
 }
 
-/* Container for StepUp image in navbar */
+/* Container for StepUp image and text in navbar */
 .stepup-btn-container {
   display: flex;
   align-items: center;
-  padding-left: 10px;
+  padding-left: 5px;
+}
+
+/* StepUp link styling */
+.stepup-link {
+  text-decoration: none;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.stepup-link:hover {
+  transform: scale(1.02);
+}
+
+/* StepUp content container */
+.stepup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 /* Image styling with responsive sizing */
@@ -233,9 +252,14 @@
   transition: transform 0.3s ease;
 }
 
-/* Hover effect */
-.stepup-image:hover {
-  transform: scale(1.05);
+/* StepUp text styling */
+.stepup-text {
+  font-size: 14px;
+  color: #7a337a;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.8;
 }
 
 /* Mobile Overlay */
@@ -336,6 +360,10 @@
   .stepup-image {
     height: 70px;
   }
+
+  .stepup-text {
+    font-size: 14px;
+  }
   
   /* Mobile dropdown adjustments */
   .dropdown-toggle {
@@ -393,6 +421,10 @@
   .stepup-image {
     height: 50px;
   }
+
+  .stepup-text {
+    font-size: 11px;
+  }
 }
 
 /* Large Desktop Styles */
@@ -410,6 +442,10 @@
   }
   
   .stepup-image {
-    height: 70px;
+    height: 80px;
+  }
+
+  .stepup-text {
+    font-size: 13px;
   }
 }

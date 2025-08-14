@@ -92,8 +92,8 @@ const StepUpSAP = () => {
                             <div className="cta-button-container">
                                 <button
                                     className="cta-button"
-                                    onClick={() => window.open('https://forms.gle/4KeQeS3DZs92KTZSA', '_blank')}>
-                                    Join Course Now
+                                    onClick={() => window.open('https://forms.gle/s6dgBYSC36MjNorJ8', '_blank')}>
+                                    Join Now – Apply Here
                                 </button>
                             </div>
                         </div>

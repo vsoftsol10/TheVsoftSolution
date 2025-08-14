@@ -18,6 +18,7 @@ import './StepUp.css';
 import StepUpLogo from '../assets/StepUp-final.avif';
 import StepHero from '../assets/stephero2.webp';
 import SapImg from '../assets/sapprogram.webp';
+import CloudImg from '../assets/Cloud-Courses-Training.avif';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +26,7 @@ gsap.registerPlugin(ScrollTrigger);
 const StepUp = () => {
   const navigate = useNavigate();
   const isMobile = useMediaQuery('(max-width:600px)');
-  
+
   // Refs for animation targets
   const containerRef = useRef(null);
   const heroContentRef = useRef(null);
@@ -39,7 +40,7 @@ const StepUp = () => {
   const stayConnectedRef = useRef(null);
   const listItemsRef = useRef([]);
   const buttonRef = useRef(null);
-  
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   const ColorConnector = styled(StepConnector)(({ theme }) => ({
@@ -59,26 +60,26 @@ const StepUp = () => {
         opacity: 0,
         y: 50
       });
-      
+
       gsap.set(overlayRef.current, {
         opacity: 0
       });
-      
+
       gsap.set(cardRef.current, {
         opacity: 0,
         y: 100
       });
-      
+
       gsap.set(cardImageRef.current, {
         scale: 1.2,
         opacity: 0
       });
-      
+
       gsap.set(cardContentRef.current, {
         opacity: 0,
         x: isMobile ? 0 : 50
       });
-      
+
       gsap.set(stayConnectedRef.current, {
         opacity: 0,
         y: 50
@@ -86,7 +87,7 @@ const StepUp = () => {
 
       // Hero section entrance animation
       const heroTimeline = gsap.timeline({ delay: 0.2 });
-      
+
       heroTimeline
         .to(overlayRef.current, {
           opacity: 1,
@@ -119,7 +120,7 @@ const StepUp = () => {
         end: "bottom 20%",
         onEnter: () => {
           const cardTimeline = gsap.timeline();
-          
+
           cardTimeline
             .to(cardRef.current, {
               opacity: 1,
@@ -147,7 +148,7 @@ const StepUp = () => {
         trigger: cardContentRef.current,
         start: "top 70%",
         onEnter: () => {
-          gsap.fromTo(listItemsRef.current, 
+          gsap.fromTo(listItemsRef.current,
             {
               opacity: 0,
               x: -20
@@ -167,7 +168,7 @@ const StepUp = () => {
       // Button hover animation
       if (buttonRef.current) {
         const button = buttonRef.current;
-        
+
         button.addEventListener('mouseenter', () => {
           gsap.to(button, {
             scale: 1.05,
@@ -175,7 +176,7 @@ const StepUp = () => {
             ease: "power2.out"
           });
         });
-        
+
         button.addEventListener('mouseleave', () => {
           gsap.to(button, {
             scale: 1,
@@ -260,15 +261,15 @@ const StepUp = () => {
             />
           </div>
 
-          <h1 
-            className="hero-title" 
+          <h1
+            className="hero-title"
             ref={titleRef}
             style={{ color: '#fff' }}
           >
             Let's Step Up to Our Growth
           </h1>
-          <p 
-            className="hero-subtitle" 
+          <p
+            className="hero-subtitle"
             ref={subtitleRef}
             style={{ color: '#fff', fontWeight: 'bold' }}
           >
@@ -408,13 +409,149 @@ const StepUp = () => {
                     fontSize: { xs: '0.9rem', sm: '1rem' }
                   }}
                 >
-                  Know More →
+                  Tap to Apply Today
                 </Button>
               </Box>
             </CardContent>
           </Card>
         </Container>
-        
+
+        <Container maxWidth="lg" sx={{ py: 4 }}>
+          <Card
+            ref={cardRef}
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              minHeight: { md: 400 },
+              boxShadow: 3,
+              borderRadius: 2,
+              overflow: 'hidden'
+            }}
+          >
+            {/* Left side - Image */}
+            <CardMedia
+              ref={cardImageRef}
+              component="img"
+              sx={{
+                width: { xs: '100%', md: '50%' },
+                height: { xs: 250, md: 'auto' },
+                objectFit: 'cover'
+              }}
+              image={CloudImg}
+              alt="cloud-internship"
+            />
+
+            {/* Right side - Content */}
+            <CardContent
+              ref={cardContentRef}
+              sx={{
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                p: { xs: 2, sm: 3, md: 4 },
+                backgroundColor: '#f8f9fa',
+                textAlign: { xs: 'center', md: 'left' },
+              }}
+            >
+              <Typography
+                variant="h5"
+                component="h2"
+                gutterBottom
+                sx={{
+                  fontWeight: 'bold',
+                  color: '#2c3e50',
+                  mb: { xs: 2, sm: 3 },
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                }}
+              >
+                Cloud Internship & Training Program
+              </Typography>
+
+              <Typography
+                fontWeight="bold"
+                color="primary"
+                gutterBottom
+                sx={{
+                  fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' },
+                  mb: { xs: 2, sm: 3 }
+                }}
+              >
+                StepUp - 30 Days Intensive Cloud Computing Program
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                <strong>StepUp by VSoft Solutions</strong> offers a <strong>30-day internship & training course</strong> designed for aspiring IT professionals who want to master cloud fundamentals in a short time.
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                Ideal for:
+                <br />
+                <strong>Students</strong> looking to gain in-demand skills<br />
+                <strong>Freshers</strong> wanting practical cloud knowledge
+              </Typography>
+
+              <Typography variant="body1" paragraph sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                This program covers:
+              </Typography>
+
+              <Box component="ul" sx={{ pl: { xs: 2, sm: 3 }, mb: 2 }}>
+                {[
+                  'Cloud basics & core concepts',
+                  'Real-time lab exercises',
+                  'Hands-on project work',
+                  'Course completion & internship certificate',
+                ].map((item, idx) => (
+                  <li key={idx} ref={addToListRefs}>
+                    <Typography variant="body1" sx={{ fontSize: { xs: '0.95rem', sm: '1rem' } }}>
+                      {item}
+                    </Typography>
+                  </li>
+                ))}
+              </Box>
+
+              <Typography
+                variant="h6"
+                color="secondary"
+                sx={{
+                  mt: { xs: 3, sm: 4 },
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' }
+                }}
+              >
+                🚀 Fast-track your cloud skills in just 30 days.
+              </Typography>
+
+              <Box
+                sx={{
+                  mt: { xs: 3, sm: 4 },
+                  display: 'flex',
+                  justifyContent: { xs: 'center', md: 'flex-start' }
+                }}
+              >
+                <Button
+                  ref={buttonRef}
+                  variant="contained"
+                  size="large"
+                  onClick={() => navigate('/stepupcloud')}
+                  sx={{
+                    backgroundColor: 'purple',
+                    '&:hover': {
+                      backgroundColor: 'indigo'
+                    },
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 1,
+                    textTransform: 'none',
+                    fontWeight: 'bold',
+                    fontSize: { xs: '0.9rem', sm: '1rem' }
+                  }}
+                >
+                  Tap to Apply Today
+                </Button>
+              </Box>
+            </CardContent>
+          </Card>
+        </Container>
         {/* Stay Connected */}
         <section className="stay-connected" ref={stayConnectedRef}>
           <h2 className="text-3xl font-bold text-center mb-4 text-purple-700">
