@@ -16,7 +16,7 @@ import WomensDay from '../assets/womensday.webp';
 import SAP from '../assets/sapprogram.webp';
 import FunFriday from '../assets/Funfriday.webp';
 import CloudInternship from '../assets/intershipcloud.webp';
-import DP from '../assets/mainlogo.png';
+import DP from '../assets/mainlogo.avif';
 import OfcTeam from '../assets/culture-heroImg.webp';
 import CultureOne from '../assets/culture1.webp';
 import CultureTwo from '../assets/culture2.webp';

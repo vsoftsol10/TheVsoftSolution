@@ -6,17 +6,21 @@
 
 /* index.css */
 :root {
-  --font-heading: 'IBM Plex Sans', sans-serif !important;
-  --font-body: 'Open Sans', sans-serif !important;
+  --font-heading: 'League Spartan', sans-serif !important;
+  --font-body: 'Inter', sans-serif !important;
 }
 
+/* Headings */
 h1,
 h2,
 h3,
 .heading {
   font-family: var(--font-heading) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
+/* Body text */
 body,
 p,
 span,
@@ -25,8 +29,10 @@ span,
   font-display: swap;
   color: var(--color-text);
   line-height: 1.6;
+  font-size: 1rem;
 }
 
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }

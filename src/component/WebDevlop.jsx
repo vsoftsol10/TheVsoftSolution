@@ -48,10 +48,6 @@ gsap.registerPlugin(ScrollTrigger);
 const WebDevlop = () => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const vsoftPurple = '#803082';
-  const vsoftGray = '#999999';
   
   // Refs for all animated elements
   const heroHeadingRef = useRef();
@@ -619,8 +615,9 @@ const WebDevlop = () => {
                 color="secondary"
                 onClick={handleContactClick}
                 sx={{
-                  backgroundColor: '#7a337a',
-                  '&:hover': { backgroundColor: '#5c245c' },
+                  backgroundColor: '#ffbd28',
+                  color: '#111',
+                  '&:hover': { backgroundColor: '#ffbf289d' },
                   borderRadius: '20px',
                   px: { xs: 2.5, sm: 3, md: 4 },
                   py: { xs: 1, sm: 1.25, md: 1.5 },

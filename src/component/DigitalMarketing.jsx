@@ -451,7 +451,7 @@ const DigitalMarketing = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(122, 51, 122, 0.75)',
+            backgroundColor: 'rgba(36, 22, 36, 0.5)',
             zIndex: 1,
           }}
         />
@@ -498,7 +498,7 @@ const DigitalMarketing = () => {
               opacity: 0
             }}
           >
-            Power Up Your Brand with <span style={{ color: vsoftGray }}>VS</span><span style={{ color: vsoftPurple }}>of</span><span style={{ color: vsoftGray }}>t</span> Digital Magic!
+            Power Up Your Brand with Digital Magic!
           </Typography>
           
           <Typography
@@ -541,8 +541,9 @@ const DigitalMarketing = () => {
               color="secondary"
               onClick={handleContactClick}
               sx={{
-                backgroundColor: '#7a337a',
-                '&:hover': { backgroundColor: '#5c245c' },
+                backgroundColor: '#ffbd28',
+                color: '#000',
+                '&:hover': { backgroundColor: '#ffbf28d0' },
                 borderRadius: '20px',
                 px: 4,
                 py: 1,
@@ -781,15 +782,15 @@ const DigitalMarketing = () => {
             size="large"
             ref={ctaButtonRef}
             sx={{
-              backgroundColor: vsoftPurple,
-              color: '#fff',
+              backgroundColor: '#ffbd28',
+              color: '#111',
               px: 4,
               py: 1.5,
               fontWeight: 'bold',
               transform: 'translateY(30px) scale(0.7)',
               opacity: 0,
               '&:hover': {
-                backgroundColor: '#6a1b9a',
+                backgroundColor: '##ffbd28d0',
               },
             }}
             onClick={handleContactClick}

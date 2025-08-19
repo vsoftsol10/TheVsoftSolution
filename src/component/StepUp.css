@@ -106,17 +106,16 @@
   margin-bottom: 4rem;
 }
 
-.section-title {
+.sections-title {
   text-align: center;
-  color: #2c3e50;
+  color: #111;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
   text-align: center;
-  color: #9c27b0;
   font-weight: 500;
   font-size: 1.3rem;
   margin-bottom: 2rem;
@@ -129,7 +128,7 @@
 }
 
 .tailor-title {
-  color: #2c3e50;
+  color: #111;
   font-weight: 600;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
@@ -194,8 +193,8 @@
 }
 
 .training-card {
-  background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
-  color: white;
+  background: linear-gradient(135deg, #ffbd28 0%, #c9114fa8 100%);
+  color: black;
   box-shadow: 0 4px 20px rgba(156, 39, 176, 0.3);
 }
 
@@ -283,18 +282,18 @@
   padding: 3rem 2rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   border-radius: 1rem;
-  border: 2px solid #9c27b0;
+  border: 2px solid #ffbd28;
 }
 
 .stay-connected h2 {
-  color: #2c3e50;
+  color: #111;
   font-weight: bold;
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 .stay-connected h3 {
-  color: #9c27b0;
+  color: #111;
   font-weight: 500;
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
@@ -363,8 +362,8 @@
     padding: 1rem;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .sections-title {
+    font-size: 2.5rem;
   }
 
   .section-subtitle {
@@ -429,7 +428,7 @@
     width: 140px;
   }
 
-  .section-title {
+  .sections-title {
     font-size: 1.8rem;
   }
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from '../assets/vslogo_new.png';
+import logo from "../assets/vsFinallogo.avif";
 import StepUp from "../assets/StepUp-final.avif";
 
 function Header() {
@@ -81,7 +81,7 @@ function Header() {
             onClick={closeMenu}
             aria-label="Close menu"
           >
-            <span className="close-icon">×</span>
+            <span className="close-icon" style={{ fontSize: "30px" }}>×</span>
           </button>
 
           <nav ref={navRef} className="navigation">

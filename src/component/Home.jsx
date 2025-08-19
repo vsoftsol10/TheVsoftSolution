@@ -71,8 +71,9 @@ const AboutSection = styled(Box)(({ theme }) => ({
 }));
 
 const PurpleText = styled('span')({
-  color: '#7a337a',
-  fontWeight: 700,
+  color: '#ffbd28',
+  fontWeight: 800,
+  fontSize: '2.3rem',
 });
 
 const ServiceCard = styled(Card)(({ theme }) => ({
@@ -107,8 +108,8 @@ const ReadMoreButton = styled(Button)(({ theme }) => ({
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: '#ffbd28',
+  color: '#000',
   padding: theme.spacing(1, 3),
   borderRadius: '4px',
   textTransform: 'uppercase',
@@ -366,7 +367,7 @@ const HomePage = () => {
                 ref={animationRefs.aboutTitle}
                 sx={{ display: 'flex', alignItems: 'center', mb: 4 }}
               >
-                About Us <ArrowForwardIcon sx={{ ml: 1, color: '#7a337a' }} />
+                About Us <ArrowForwardIcon sx={{ ml: 1, color: '#ffbd28' }} />
               </Typography>
               <Box
                 component="img"
@@ -620,12 +621,12 @@ const HomePage = () => {
                   <Paper elevation={6} sx={{
                     p: 3,
                     textAlign: 'center',
-                    border: '2px solid #7a337a',
+                    border: '2px solid #ffbd28',
                     borderRadius: 2,
                     backgroundColor: '#fff',
                     color: '#000'
                   }}>
-                    <Box sx={{ mb: 2, color: '#7a337a' }}>{feature.icon}</Box>
+                    <Box sx={{ mb: 2, color: '#ffbd28' }}>{feature.icon}</Box>
                     <Typography variant="subtitle1" fontWeight="bold">{feature.title}</Typography>
                   </Paper>
                 </Grid>
@@ -661,7 +662,7 @@ const HomePage = () => {
             }}>
               {steps.map((step, i) => (
                 <Box key={i} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                  <Box sx={{ color: '#7a337a' }}>{step.icon}</Box>
+                  <Box sx={{ color: '#ffbd28' }}>{step.icon}</Box>
                   <Typography variant="subtitle1" fontWeight="bold">{step.label}</Typography>
                 </Box>
               ))}

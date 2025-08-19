@@ -236,7 +236,7 @@ const ApplicationDevelopment = () => {
                         left: 0,
                         width: '100%',
                         height: '100%',
-                        backgroundColor: 'rgba(122, 51, 122, 0.75)',
+                        backgroundColor: 'rgba(36, 22, 36, 0.5)',
                         zIndex: 1,
                     }}
                 />
@@ -299,8 +299,9 @@ const ApplicationDevelopment = () => {
                             color="secondary"
                             onClick={handleContactClick}
                             sx={{
-                                backgroundColor: vsoftPurple,
-                                '&:hover': { backgroundColor: '#5c245c' },
+                                backgroundColor: '#ffbd28',
+                                color: '#000',
+                                '&:hover': { backgroundColor: '#ffbf28d0' },
                                 borderRadius: '20px',
                                 px: 4,
                                 py: 1,
@@ -437,14 +438,14 @@ const ApplicationDevelopment = () => {
                                         height: 80,
                                         margin: '0 auto',
                                         borderRadius: '50%',
-                                        backgroundColor: vsoftPurple,
+                                        backgroundColor: '#ffbd28',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
                                         mb: 2,
                                     }}
                                 >
-                                    <Box sx={{ color: '#fff', fontSize: 40 }}>
+                                    <Box sx={{ color: '#111', fontSize: 40 }}>
                                         {service.icon}
                                     </Box>
                                 </Box>

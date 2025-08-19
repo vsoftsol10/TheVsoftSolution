@@ -19,8 +19,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = ['Your Info', 'Message', 'Confirm'];
 
-const vsoftPurple = '#803082';
-const vsoftGray = '#999999';
+const vsoftYellow = '#ffbd28';
+const vsoftGray = '#332911ff';
 
 const Contact = () => {
     const [activeStep, setActiveStep] = useState(0);
@@ -288,11 +288,10 @@ const Contact = () => {
                     variant="h4" 
                     align="center" 
                     fontWeight="bold" 
-                    color={vsoftGray} 
                     gutterBottom
                     ref={titleRef}
                 >
-                    Get In <span style={{ color: vsoftPurple }}>Touch</span>
+                    Get In <span style={{ color: '#ffbd28', fontSize: '2rem' }}>Touch</span>
                 </Typography>
                 
                 <Typography align="center" mb={4} ref={subtitleRef}>
@@ -382,7 +381,7 @@ const Contact = () => {
                         <Button
                             onClick={handleNext}
                             sx={{
-                                bgcolor: vsoftPurple,
+                                bgcolor: vsoftYellow,
                                 color: '#fff',
                                 '&:hover': { bgcolor: vsoftGray },
                             }}
@@ -401,7 +400,7 @@ const Contact = () => {
                     gutterBottom
                     ref={bottomTitleRef}
                 >
-                    Let's Connect <span style={{ color: vsoftGray }}>V</span><span style={{ color: vsoftPurple }}>Soft</span> <span style={{ color: vsoftGray }}>Solutions</span>
+                    Let's Connect <span style={{ color: vsoftYellow, fontSize: '2rem' }}>V</span><span style={{ color: vsoftGray, fontSize: '2rem' }}>Soft</span> <span style={{ color: vsoftGray, fontSize: '2rem' }}>Solutions</span>
                 </Typography>
 
                 <Typography 

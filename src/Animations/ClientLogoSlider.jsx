@@ -11,7 +11,7 @@ import ClientSix from '../assets/client/RAJALAKSHMI LOGO 001.webp';
 import ClientSeven from '../assets/client/MAHARAJA LOGO 001.webp';
 import ClientEight from '../assets/client/GAYRA LOGO 001.webp';
 import ClientNine from '../assets/client/Nivedha LOGO 002.webp';
-import ClientTen from '../assets/client/thanporunai-logo.webp'; 
+import ClientTen from '../assets/client/thanporunai-logo.webp';
 import ClientEleven from '../assets/client/4Tlogo.webp';
 import ClientTwelve from '../assets/client/Friends Logo.webp';
 const ClientLogoSlider = () => {
@@ -55,7 +55,7 @@ const ClientLogoSlider = () => {
   // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => 
+      setCurrentSlide((prev) =>
         prev >= clients.length - visibleSlides ? 0 : prev + 1
       );
     }, 3000);
@@ -64,13 +64,13 @@ const ClientLogoSlider = () => {
   }, [clients.length, visibleSlides]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => 
+    setCurrentSlide((prev) =>
       prev >= clients.length - visibleSlides ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => 
+    setCurrentSlide((prev) =>
       prev <= 0 ? clients.length - visibleSlides : prev - 1
     );
   };
@@ -99,7 +99,7 @@ const ClientLogoSlider = () => {
           <Typography
             variant="overline"
             sx={{
-              color: '#803082',
+              color: '#2c3e50', // replaced purple with yellow
               fontWeight: 700,
               letterSpacing: '2px',
               fontSize: '0.9rem',
@@ -109,16 +109,15 @@ const ClientLogoSlider = () => {
           >
             Trusted Partners
           </Typography>
-          
+
           <Typography
             variant="h2"
             component="h2"
             sx={{
               fontWeight: 800,
-              color: 'text.primary',
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
               mb: 2,
-              background: 'linear-gradient(45deg, #2c3e50, #803082)',
+              background: 'linear-gradient(45deg, #2c3e50, #ffbd28)', // replaced purple with yellow
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -126,18 +125,18 @@ const ClientLogoSlider = () => {
           >
             Our Successful Clients
           </Typography>
-          
+
           <Box
             sx={{
               width: 80,
               height: 4,
-              background: 'linear-gradient(90deg, #803082, #a855f7)',
+              background: 'linear-gradient(40deg, #ffbd28, #2c3e50)',
               mx: 'auto',
               borderRadius: 2,
               mb: 3
             }}
           />
-          
+
           <Typography
             variant="body1"
             sx={{
@@ -174,9 +173,9 @@ const ClientLogoSlider = () => {
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            <ChevronLeft size={24} color="#803082" />
+            <ChevronLeft size={24} color="#111" />
           </IconButton>
-          
+
           <IconButton
             onClick={nextSlide}
             sx={{
@@ -196,7 +195,7 @@ const ClientLogoSlider = () => {
               transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
             }}
           >
-            <ChevronRight size={24} color="#803082" />
+            <ChevronRight size={24} color="#111" />
           </IconButton>
 
           {/* Slider Track */}
@@ -285,11 +284,11 @@ const ClientLogoSlider = () => {
                   width: currentSlide === index ? 32 : 12,
                   height: 12,
                   borderRadius: 6,
-                  bgcolor: currentSlide === index ? '#803082' : 'rgba(128, 48, 130, 0.3)',
+                  bgcolor: currentSlide === index ? '#ffbd28' : 'rgba(128, 48, 130, 0.3)',
                   cursor: 'pointer',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   '&:hover': {
-                    bgcolor: currentSlide === index ? '#803082' : 'rgba(128, 48, 130, 0.6)',
+                    bgcolor: currentSlide === index ? '#a5812eff' : 'rgba(128, 48, 130, 0.6)',
                     transform: 'scale(1.2)'
                   }
                 }}

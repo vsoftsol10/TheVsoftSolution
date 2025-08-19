@@ -497,22 +497,22 @@ const UiUx = () => {
   // Our design process steps
   const designProcess = [
     {
-      icon: <EmojiObjectsIcon sx={{ fontSize: 40, color: vsoftPurple }} />,
+      icon: <EmojiObjectsIcon sx={{ fontSize: 40, color: "#111" }} />,
       title: "Discovery & Research",
       description: "We start by understanding your users, market, and business goals through research and stakeholder interviews."
     },
     {
-      icon: <AutoAwesomeIcon sx={{ fontSize: 40, color: vsoftPurple }} />,
+      icon: <AutoAwesomeIcon sx={{ fontSize: 40, color: "#111" }} />,
       title: "Visual Design",
       description: "Our designers craft beautiful, on-brand interfaces with attention to typography, color, and visual hierarchy."
     },
     {
-      icon: <DeviceHubIcon sx={{ fontSize: 40, color: vsoftPurple }} />,
+      icon: <DeviceHubIcon sx={{ fontSize: 40, color: "#111" }} />,
       title: "Prototyping & Testing",
       description: "We create interactive prototypes to test functionality and gather user feedback before development."
     },
     {
-      icon: <SpeedIcon sx={{ fontSize: 40, color: vsoftPurple }} />,
+      icon: <SpeedIcon sx={{ fontSize: 40, color: "#111" }} />,
       title: "Implementation Support",
       description: "We work closely with developers to ensure design integrity throughout the development process."
     }
@@ -629,8 +629,8 @@ const UiUx = () => {
               color="secondary"
               onClick={handleContactClick}
               sx={{
-                backgroundColor: '#7a337a',
-                '&:hover': { backgroundColor: '#5c245c' },
+                backgroundColor: '#ffbd28',
+                '&:hover': { backgroundColor: '#ffbf28d0' },
                 borderRadius: '20px',
                 px: 4,
                 py: 1,
@@ -706,7 +706,7 @@ const UiUx = () => {
             fontWeight="bold" 
             gutterBottom 
             align="center" 
-            sx={{ mb: 5, color: vsoftPurple }}
+            sx={{ mb: 5}}
             ref={toolsHeadingRef}
           >
             Tools of Our Trade
@@ -736,7 +736,7 @@ const UiUx = () => {
                     flexDirection: 'column',
                     justifyContent: 'space-between'
                   }}>
-                    <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: vsoftPurple }}>
+                    <Typography variant="h6" fontWeight="bold" gutterBottom>
                       {tool.name}
                     </Typography>
                     <Typography variant="body2">
@@ -757,7 +757,7 @@ const UiUx = () => {
           fontWeight="bold" 
           gutterBottom 
           align="center" 
-          sx={{ mb: 5, color: vsoftPurple }}
+          sx={{ mb: 5}}
           ref={processHeadingRef}
         >
           Our Design Process
@@ -788,7 +788,7 @@ const UiUx = () => {
                   >
                     {step.icon}
                   </Box>
-                  <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: vsoftPurple }}>
+                  <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: '#111' }}>
                     {step.title}
                   </Typography>
                   <Typography variant="body2">
@@ -817,7 +817,8 @@ const UiUx = () => {
                         width: 80,
                         height: 80,
                         borderRadius: '50%',
-                        backgroundColor: 'white',
+                        backgroundColor: '#ffbd28',
+                        color: 'black',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
@@ -828,7 +829,7 @@ const UiUx = () => {
                     >
                       {step.icon}
                     </Box>
-                    <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: vsoftPurple }}>
+                    <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ color: '#111' }}>
                       {step.title}
                     </Typography>
                     <Typography variant="body2">
@@ -837,7 +838,7 @@ const UiUx = () => {
                   </Box>
                   {index < designProcess.length - 1 && (
                     <Box sx={{ display: 'flex', alignItems: 'center', alignSelf: 'center', mt: 4 }}>
-                      <NavigateNextIcon sx={{ fontSize: 30, color: vsoftGray }} />
+                      <NavigateNextIcon sx={{ fontSize: 30, color: "#111" }} />
                     </Box>
                   )}
                 </React.Fragment>
@@ -848,7 +849,7 @@ const UiUx = () => {
       </Container>
 
       {/* Why Choose Us Section */}
-      <Box sx={{ backgroundColor: vsoftPurple, py: 8, color: 'white', overflow: 'hidden' }}>
+      <Box sx={{ backgroundColor: '#ffbf28cb', py: 8, color: 'black', overflow: 'hidden' }}>
         <Container maxWidth="lg">
           <Typography 
             variant="h4" 
@@ -909,7 +910,7 @@ const UiUx = () => {
               onClick={handleContactClick}
               sx={{
                 backgroundColor: 'white',
-                color: vsoftPurple,
+                color: 'black',
                 '&:hover': { backgroundColor: '#f0f0f0' },
                 borderRadius: '20px',
                 px: 4,
@@ -929,7 +930,6 @@ const UiUx = () => {
           variant="h5" 
           fontWeight="bold" 
           gutterBottom 
-          sx={{ color: vsoftPurple }}
           ref={ctaHeadingRef}
         >
           Transform Your Digital Experience
@@ -946,16 +946,16 @@ const UiUx = () => {
           onClick={handleContactClick}
           ref={ctaButtonRef}
           sx={{
-            borderColor: vsoftPurple,
-            color: vsoftPurple,
+            borderColor: '#ffbd28',
+            color: 'black',
             borderRadius: '20px',
             px: 4,
             py: 1,
             fontWeight: 'bold',
             transition: 'all 0.3s ease',
             '&:hover': {
-              borderColor: vsoftPurple,
-              backgroundColor: vsoftPurple,
+              borderColor: '#ffbd28',
+              backgroundColor: '#ffbd28',
               color: '#ffffff',
             },
           }}

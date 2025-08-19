@@ -1,8 +1,8 @@
 /* Header.css - Updated for Perfect Responsive Behavior */
 .header {
-  background-color: #f5f3f6;
+  background-color: #fff;
   padding: 15px 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 0px 5px rgba(0, 0, 0, 0.05); */
   position: relative;
   top: 0;
   width: 100%;
@@ -22,10 +22,12 @@
 .logo-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
 .logo-image {
-  max-height: 70px;
+  max-height: 80px;
   width: auto;
 }
 
@@ -57,13 +59,13 @@
 }
 
 .nav-link:hover {
-  color: #7a337a;
+  color:  #ffbd28;
 }
 
 .contact-btn {
   display: inline-block;
-  background-color: #7a337a;
-  color: white !important;
+  background-color: #ffbd28;
+  color: black !important;
   padding: 8px 20px;
   border-radius: 4px;
   font-weight: 600;
@@ -72,8 +74,8 @@
 }
 
 .contact-btn:hover {
-  background-color: #632063;
-  color: white !important;
+  background-color: #d39b17;
+  color: black !important;
 }
 
 /* Hamburger Menu */
@@ -97,7 +99,7 @@
 .dot {
   width: 25px;
   height: 3px;
-  background-color: #7a337a;
+  background-color: #111;
   border-radius: 20% 0 20% 0;
   transition: all 0.3s ease;
 }
@@ -129,7 +131,6 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 28px;
   color: #333;
   z-index: 1002;
 }
@@ -163,7 +164,7 @@
 }
 
 .dropdown-toggle:hover {
-  color: #7a337a;
+  color: #ffbd28;
 }
 
 .dropdown-arrow {
@@ -215,7 +216,7 @@
 
 .dropdown-link:hover {
   background-color: #f5f5f5;
-  color: #7a337a;
+  color: #ffbd28;
 }
 
 /* Container for StepUp image and text in navbar */
@@ -255,7 +256,7 @@
 /* StepUp text styling */
 .stepup-text {
   font-size: 14px;
-  color: #7a337a;
+  color: black;
   font-weight: 900;
   text-align: center;
   white-space: nowrap;

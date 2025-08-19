@@ -512,8 +512,9 @@ const WordPress = () => {
               color="secondary"
               onClick={handleContactClick}
               sx={{
-                backgroundColor: vsoftPurple,
-                '&:hover': { backgroundColor: '#5c245c' },
+                backgroundColor: '#ffbd28',
+                color: '#000',
+                '&:hover': { backgroundColor: '#ffbf28d0' },
                 borderRadius: '20px',
                 px: 4,
                 py: 1,

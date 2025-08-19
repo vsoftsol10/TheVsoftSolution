@@ -14,20 +14,9 @@ import { styled } from '@mui/material/styles';
 import './StepUp.css';
 import { useNavigate } from "react-router-dom";
 
-const steps = [
-    '21 Days Internship',
-    '2 Months Technical + Practical Training',
-    'SAP Basis Admin + Placement Assistance',
-];
 const StepUpCloud = () => {
     const isMobile = useMediaQuery('(max-width:600px)');
     const navigate = useNavigate();
-    const ColorConnector = styled(StepConnector)(({ theme }) => ({
-        '& .MuiStepConnector-line': {
-            borderColor: theme.palette.primary.main,
-            borderWidth: 2,
-        },
-    }));
 
     return (
         <>
@@ -46,7 +35,7 @@ const StepUpCloud = () => {
                     </Breadcrumbs>
                 </Box>
                 <section className="course-details">
-                    <h2 className="section-title">Cloud Internship Details</h2>
+                    <h2 className="sections-title">Cloud Internship Details</h2>
                     <h3 className="section-subtitle">30-Day Cloud Computing Internship Program for Students</h3>
 
                     <div className="tailor-made-section">
@@ -75,8 +64,16 @@ const StepUpCloud = () => {
                                 <li>✓ Hands-on Cloud Basics & Fundamentals</li>
                                 <li>✓ Real-Time Project Exposure</li>
                             </ul>
+                            <div className="cta-button-container">
+                                <button
+                                    className="cta-button"
+                                    onClick={() => window.open('https://forms.gle/qUY5bMWGu8SK8oHb6', '_blank')}
+                                >
+                                    Apply for Internship
+                                </button>
+                            </div>
                             <div className="special-offer">
-                                💡 Complete internship & get exclusive training discounts!
+                                 Complete internship & get exclusive training discounts!
                             </div>
                         </div>
 
@@ -85,16 +82,16 @@ const StepUpCloud = () => {
                                 <h3>Advanced Cloud Training</h3>
                             </div>
                             <ul className="feature-list">
-                                <li>⭐ Duration: 30 Days</li>
-                                <li>⭐ Live Practical Training</li>
-                                <li>⭐ Course Completion & Internship Certificate</li>
+                                 <li>• Duration: 30 Days</li>
+                                 <li>• Live Practical Training</li>
+                                 <li>• Course Completion</li>
                             </ul>
                             <div className="cta-button-container">
                                 <button
                                     className="cta-button"
-                                    onClick={() => window.open('https://forms.gle/8wGctSZNV9bgaH4k7', '_blank')}
+                                    onClick={() => window.open('https://forms.gle/s6dgBYSC36MjNorJ8', '_blank')}
                                 >
-                                    Join Now – Apply Here
+                                    Apply Here for Course
                                 </button>
                             </div>
                         </div>
