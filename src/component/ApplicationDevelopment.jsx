@@ -41,7 +41,6 @@ const ApplicationDevelopment = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const isTablet = useMediaQuery(theme.breakpoints.down('lg'));
-    const vsoftPurple = '#803082';
 
     // Refs for all animated elements
     const heroHeadingRef = useRef();

@@ -342,7 +342,7 @@ const CareersPage = () => {
               Join the Vision. Grow with VSoft.
             </Typography>
             <Typography variant="body1" paragraph>
-              At VSoft Solutions, we're more than just a tech company — we're a team of innovators, creators, and problem-solvers who believe in using technology to make an impact.
+              At VSoft Solutions, we're more than just a tech company - we're a team of innovators, creators, and problem-solvers who believe in using technology to make an impact.
             </Typography>
             <Typography variant="body1" paragraph>
               Whether you're just starting your career or expanding your expertise, VSoft offers a dynamic environment for learning, collaboration, and growth.
@@ -410,9 +410,9 @@ const CareersPage = () => {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          backgroundColor: '#803082',
+          backgroundColor: '#7d8230ff',
           color: '#fff',
-          minHeight: 'auto',
+          height: 'auto',
           py: { xs: 4, md: 6 },
           position: 'relative',
           overflow: 'hidden'
@@ -446,12 +446,12 @@ const CareersPage = () => {
               onChange={handleTabChange}
               sx={{
                 '& .MuiTabs-indicator': {
-                  backgroundColor: '#fff',
+                  backgroundColor: '#111',
                   height: 3,
                   borderRadius: '2px'
                 },
                 '& .MuiTab-root': {
-                  color: '#ccc',
+                  color: '#fff',
                   fontSize: { xs: '1rem', md: '1.25rem' },
                   fontWeight: 400,
                   textTransform: 'none',
@@ -459,12 +459,12 @@ const CareersPage = () => {
                   padding: { xs: '12px 16px', md: '16px 24px' },
                   transition: 'all 0.3s ease',
                   '&:hover': {
-                    color: '#fff',
+                    color: '#ccc',
                     transform: 'translateY(-2px)'
                   }
                 },
                 '& .MuiTab-root.Mui-selected': {
-                  color: '#fff'
+                  color: '#111'
                 }
               }}
               variant={isMobile ? "scrollable" : "standard"}
@@ -510,7 +510,7 @@ const CareersPage = () => {
                   sx={{
                     fontSize: { xs: '1rem', md: '1.125rem', lg: '1.25rem' },
                     lineHeight: { xs: 1.6, md: 1.7 },
-                    color: '#e0e0e0',
+                    color: '#fff',
                     maxWidth: { xs: '100%', lg: '90%' }
                   }}
                 >
@@ -595,7 +595,7 @@ const CareersPage = () => {
                     fontSize: { xs: '0.75rem', md: '0.875rem' },
                     fontWeight: 600,
                     letterSpacing: '0.1em',
-                    color: '#2196f3',
+                    color: '#ffbd28',
                     mb: { xs: 2, md: 3 },
                     textTransform: 'uppercase',
                   }}

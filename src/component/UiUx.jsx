@@ -35,10 +35,6 @@ const UiUx = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.down('md'));
-
-  const vsoftPurple = '#803082';
-  const vsoftGray = '#999999';
 
   // Refs for animated elements
   const heroBreadcrumbRef = useRef();
@@ -962,7 +958,6 @@ const UiUx = () => {
         >
           Get in Touch
         </Button>
-
       </Container>
     </>
   );

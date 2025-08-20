@@ -9,8 +9,6 @@
         Grid,
         Card,
         CardContent,
-        useTheme,
-        useMediaQuery,
     } from '@mui/material';
     import HomeIcon from '@mui/icons-material/Home';
     import NavigateNextIcon from '@mui/icons-material/NavigateNext';
@@ -31,9 +29,6 @@
 
     const AboutUs = () => {
         const navigate = useNavigate();
-        const theme = useTheme();
-        const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-        const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
         const vsoftYellow = '#ffbd28';
 const vsoftGray = '#332911ff';
 

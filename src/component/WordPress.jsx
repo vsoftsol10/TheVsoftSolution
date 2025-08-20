@@ -39,7 +39,6 @@ const WordPress = () => {
   const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const vsoftPurple = '#803082';
   
   // Refs for animated elements
   const heroHeadingRef = useRef();

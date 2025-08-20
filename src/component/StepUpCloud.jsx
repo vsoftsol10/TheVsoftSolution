@@ -15,7 +15,6 @@ import './StepUp.css';
 import { useNavigate } from "react-router-dom";
 
 const StepUpCloud = () => {
-    const isMobile = useMediaQuery('(max-width:600px)');
     const navigate = useNavigate();
 
     return (

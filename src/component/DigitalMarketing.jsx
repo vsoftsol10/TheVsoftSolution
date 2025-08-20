@@ -33,10 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
 const DigitalMarketing = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [activeTab, setActiveTab] = useState(0);
   const navigate = useNavigate();
-  const vsoftPurple = '#803082';
-  const vsoftGray = '#999999';
 
   // Refs for animated elements
   const heroBreadcrumbRef = useRef();

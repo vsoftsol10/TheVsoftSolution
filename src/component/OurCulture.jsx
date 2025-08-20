@@ -232,7 +232,7 @@ const OurCulture = () => {
             left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'rgba(122, 51, 122, 0.75)',
+            backgroundColor: 'rgba(36, 22, 36, 0.5)',
             zIndex: 1,
           }}
         />
@@ -439,23 +439,23 @@ const OurCulture = () => {
                   sx={{
                     fontSize: { xs: '3rem', md: '4rem' },
                     fontWeight: 700,
-                    color: vsoftGray,
+                    color: 'black',
                     lineHeight: 1.1,
                   }}
                 >
-                  VS<span style={{ color: vsoftPurple }}>o</span>ft
+                  VS<span style={{ color: '#ffbd28', fontSize: '3rem' }}>o</span>ft
                 </Typography>
                 <Typography
                   variant="h1"
                   sx={{
                     fontSize: { xs: '2rem', md: '2.8rem' },
                     fontWeight: 500,
-                    color: vsoftGray,
+                    color: 'black',
                     letterSpacing: '4px',
                     lineHeight: 1.1,
                   }}
                 >
-                  SOLUT<span style={{ color: vsoftPurple }}>I</span>ONS
+                  SOLUT<span style={{ color: '#ffbd28', fontSize: '2.5rem' }}>I</span>ONS
                 </Typography>
               </Box>
             </Grid>
